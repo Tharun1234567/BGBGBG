@@ -1,39 +1,73 @@
 canvas = document.getElementById('myCanvas');
-    ctx = canvas.getContext("2d");
+ctx = canvas.getContext("2d");
 
- canvas.addEvent("mousedown", my_mousedown);
- 
- function my_mousedown(e)
- {
+img_width = 300;
+img_height = 100;
 
-    var color;
-    color = document.getElementById("color").value;
-    width_of_line - document.getElementById("width_of-line").value;
-    radius - document.getElementById("radius").value;
-    mouseEvent - "mouseDown"; 
- }
+var img_image;
 
- function my_mouseup(){
-     var mouse_Event = "mouseleave";
-     addEventListener ("mousemove");
- }
+img_x = 100;
+img_y = 100;
 
- 
-
- function my_mousemove(e)
- { 
-    current_position_of_mouse_x = e.clientX - canvas.offsetLeft;
-    current_position_of_mouse_y = e.clientY - canvas.offsetTop;
-    
-    if (mouseEvent == "mouseDown") {
-        console.log("Current position of x and y coordinates =");
-        console.log("x = " + current_position_of_mouse_x + "y = " +
-        current_position_of_mouse_y);
-        ctx.beginPath();
-        ctx.strokeStyle = color;
-        ctx.lineWidth = width_of_line;
-        ctx.arc(current_position_of_mouse_x, current_position_of_mouse_y, radius ,0 ,
-            2 * Math.PI);
-                  ctx.stroke();
-    }
+function add() {
+	img_imgTag = new Image(); var img_image = "";
+	img_imgTag.onload = uploading; var onload;
+	img_imgTag.src = img_image;  img_image ="Alpkey.png";
 }
+
+function uploadimg() {
+
+	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
+}
+
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e)
+{
+	keyPressed = e.keyCode;
+	console.log(keyPressed);
+	
+		
+		function my_keydown(e)
+		{
+			keyPressed = e.keyCode;
+			console.log(keyPressed);
+		}
+		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
+{
+	aplhabetkey();
+	document.getElementById("d1").innerHTML="you Pressed Alphabet Key";
+}
+		else{
+		otherkey();
+		document.getElementById("d1").innerHTML="You pressed symbol or other key";
+	}
+}
+
+function aplhabetkey()
+{
+   img_image="Alkey.png";
+   add(); 
+
+}
+function numberkey()
+{
+	img_image="mumkey.png";
+   add();
+}
+function arrowkey()
+{
+	img_image="Arrkey.png";
+   add();
+}
+function specialkey()
+{
+	img_image="spkey.png";
+   add();
+}
+function otherkey()
+{
+	img_image="otherkey.png";
+	add();
+}
+	
