@@ -26,13 +26,11 @@ function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-	
-		
-		function my_keydown(e)
-		{
-			keyPressed = e.keyCode;
-			console.log(keyPressed);
-		}
+
+	keyPressed = e.keyCode;
+	console.log(keyPressed);
+
+
 		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
 {
 	aplhabetkey();
