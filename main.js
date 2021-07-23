@@ -1,24 +1,33 @@
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext("2d");
 
-img_width = 300;
-img_height = 100;
+greencar_width = 75;
+greencar_height = 100;
 
-var img_image;
+background_image = "parkingLot.jpg";
+greencar_image = "car2.png";
 
-img_x = 100;
-img_y = 100;
+greencar_x = 5;
+greencar_y = 225;
 
 function add() {
-	img_imgTag = new Image(); var img_image = "";
-	img_imgTag.onload = uploading; var onload;
-	img_imgTag.src = img_image;  img_image ="Alpkey.png";
+  background_image = new Image();
+  background_image.onload = uploadBackground;
+  background_imageTag.src = background_image;
+
+  greencar_imgTag = new Image(); 
+  greencar_imgTag.onload = uploadgreeencar;
+  greencar_imgTag.src = greencar_image;
+}
+function uploadBackground() {
+	ctx.drawImage(back-imag_Tag, 0, 0, canvas.width, canvas.heigth);
 }
 
-function uploadimg() {
+function uploadgreencar() {
+	ctx.drawImage(greencar_imgTag, greencar_x,greencar_y,greencar_width,greencar_height);
 
-	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
 }
+
 
 window.addEventListener("keydown", my_keydown);
 
@@ -26,46 +35,72 @@ function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-
-	keyPressed = e.keyCode;
-	console.log(keyPressed);
-
-
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-{
-	aplhabetkey();
-	document.getElementById("d1").innerHTML="you Pressed Alphabet Key";
+		if(keyPressed == '38')
+		{
+			up();
+			console.log("up");
+		}
+	
+		if(keyPressed == '40')
+		{
+			down();
+			console.log("down");
+		}
+		
+		if(keyPressed == '37')
+		{
+			left();
+			console.log("left");
+		}
+	
+		if(keyPressed == '39')
+		{
+			right();
+			console.log("right");
+		}
+		
+		
 }
-		else{
-		otherkey();
-		document.getElementById("d1").innerHTML="You pressed symbol or other key";
+
+function up()
+{
+	if(greencar_y >=0) 
+	{
+		greencar_y = greencar_y - 10;
+		console.log("When up arrow is pressed, x = " + greencar_x + " | y =" +greencar_y);
+		uploadBackground();
+		uploadgreencar();
 	}
 }
 
-function aplhabetkey()
+function down()
 {
-   img_image="Alkey.png";
-   add(); 
+    if(greencar_y >=0)
+	{
+		greencar_y = greencar_y - 10;
+		console.log("When down arrow is pressed, x = " + greencar_x + " | y =" +greencar_y);
+		uploadBackground();
+		uploadgreencar();
+	}
+}
 
-}
-function numberkey()
+function left()
 {
-	img_image="mumkey.png";
-   add();
+	if(greencar_y >=0)
+	{
+		greencar_y = greencar_y - 10;
+		console.log("When left arrow is pressed, x = " + greencar_x + " | y =" +greencar_y);
+		uploadBackground();
+		uploadgreencar();
+	}
 }
-function arrowkey()
+function right()
 {
-	img_image="Arrkey.png";
-   add();
+	if(greencar_y >=0)
+	{
+		greencar_y = greencar_y - 10;
+		console.log("When right arrow is pressed, x = " + greencar_x + " | y =" +greencar_y);
+		uploadBackground();
+		uploadgreencar();
+	}
 }
-function specialkey()
-{
-	img_image="spkey.png";
-   add();
-}
-function otherkey()
-{
-	img_image="otherkey.png";
-	add();
-}
-	
